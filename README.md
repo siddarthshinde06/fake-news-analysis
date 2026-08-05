@@ -103,7 +103,7 @@ The full training pipeline is available in `app.ipynb` and includes:
 - Evaluating with a classification report
 - Exporting the vectorizer and model with `joblib`
 
-To retrain the model, place `true.csv` and `fake.csv` in the project directory and run the notebook.
+To retrain the model, place `true.csv` and `fake.csv` in the project directory and run the notebook. we did not upload the csv file this are available on kaggle 
 
 ## License
 
