@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 from flask import Flask, render_template, request
 import joblib
 
@@ -26,7 +25,6 @@ def predict():
 
 if __name__ == "__main__":
     app.run(debug=True)
-=======
 from flask import Flask, render_template, request
 import joblib
 
@@ -54,4 +52,4 @@ def predict():
 
 if __name__ == "__main__":
     app.run(debug=True)
->>>>>>> adc1e118b4480b4254a6c8781429dee2b0a77a6c
+
