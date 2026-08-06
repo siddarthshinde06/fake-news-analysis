@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Fake News Detection</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+  <main class="page-wrap">
+    <div class="card">
+      <header class="card-header">
+        <h1>📰 Fake News Detection</h1>
+        <p class="subtitle">Paste a news article below and click <strong>Check News</strong>.</p>
+      </header>
+
+      <form action="/predict" method="POST" class="card-form" autocomplete="off">
+        <label for="news" class="label">News Article</label>
+        <textarea id="news" name="news" class="textarea" placeholder="Paste the article here..." required>{{ news if news else "" }}</textarea>
+
+        <button class="btn animate-btn" type="submit">Check News</button>
+      </form>
+
+      {% if prediction %}
+      <section class="result-wrap">
+        <div class="result" style="border-color: {{ color }}; color: {{ color }};">
+          <div class="result-text">{{ prediction }}</div>
+          {% if probability is defined %}
+          <div class="prob">Confidence: {{ '%.2f'|format(probability*100) }}%</div>
+          {% endif %}
+        </div>
+      </section>
+      {% endif %}
+
+      <footer class="card-footer">
+        <small>Model: Logistic Regression • Local demo</small>
+      </footer>
+    </div>
+  </main>
+</body>
+</html>
