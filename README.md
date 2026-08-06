@@ -76,7 +76,10 @@ fake-news-analysis/
    python app.py
    ```
 
-4. Open your browser and go to 
+4. Open your browser and go to
+    ```bash
+   https://fake-news-analysis-9tcm.onrender.com
+   ```
 
 ### Usage
 
