@@ -21,6 +21,25 @@
         <button class="btn animate-btn" type="submit">Check News</button>
       </form>
 
+      <section class="examples-wrap">
+        <p class="examples-title">Try a sample from the training dataset:</p>
+        <div class="examples-grid">
+          <button type="button" class="example-btn example-true" onclick="fillExample('true')">
+            <span class="example-tag tag-true">TRUE.csv</span>
+            <span class="example-headline">“As U.S. budget fight looms, Republicans flip their fiscal script”</span>
+          </button>
+          <button type="button" class="example-btn example-fake" onclick="fillExample('fake')">
+            <span class="example-tag tag-fake">FAKE.csv</span>
+            <span class="example-headline">“Donald Trump Sends Out Embarrassing New Year's Eve Message; This is Disturbing”</span>
+          </button>
+        </div>
+        <p class="examples-note">
+          These headlines are real examples from the <code>True.csv</code> and <code>Fake.csv</code> files
+          used to train this model. Click one to load it into the box above, then press
+          <strong>Check News</strong> to see the prediction.
+        </p>
+      </section>
+
       {% if prediction %}
       <section class="result-wrap">
         <div class="result" style="border-color: {{ color }}; color: {{ color }};">
@@ -37,5 +56,18 @@
       </footer>
     </div>
   </main>
+
+  <script>
+    const EXAMPLES = {
+      true: "As U.S. budget fight looms, Republicans flip their fiscal script. WASHINGTON (Reuters) - The head of a conservative Republican faction in the U.S. Congress urged budget restraint in 2018, drawing a hard line on federal spending as lawmakers prepared to battle over the budget in January.",
+      fake: "Donald Trump Sends Out Embarrassing New Year's Eve Message; This is Disturbing. Instead of a simple holiday greeting, the tweet took aim at 'enemies, haters,' and the 'very dishonest Fake News Media,' drawing widespread mockery online."
+    };
+
+    function fillExample(kind) {
+      const textarea = document.getElementById('news');
+      textarea.value = EXAMPLES[kind];
+      textarea.focus();
+    }
+  </script>
 </body>
 </html>
